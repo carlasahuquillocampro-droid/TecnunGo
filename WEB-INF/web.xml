@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+
+    <servlet>
+        <servlet-name>UniList</servlet-name>
+        <servlet-class>UniList</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UniList</servlet-name>
+        <url-pattern>/UniList</url-pattern>
+    </servlet-mapping>
+
+</web-app>

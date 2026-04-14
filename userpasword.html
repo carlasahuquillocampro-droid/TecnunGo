@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnunGo - User Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Colors based on the TecnunGo storyboard */
+            --tecnun-blue-dark: #102a43;
+            --tecnun-blue-light: #243b55;
+            --tecnun-green: #4b8b70; 
+            --tecnun-green-hover: #3a6b56;
+            --text-light: #ffffff;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+            --bg-body: #f3f4f6;
+            --error-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--bg-body); 
+            color: var(--text-dark);
+        }
+
+        .split-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 950px;
+            min-height: 550px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* =========================================
+           LEFT PANEL (Institutional Branding)
+           ========================================= */
+        .panel-left {
+            background: linear-gradient(135deg, var(--tecnun-blue-dark) 0%, var(--tecnun-blue-light) 100%);
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-light);
+            text-align: center;
+            position: relative;
+        }
+
+        .panel-left h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .panel-left h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 0 0 30px 0;
+            color: #93c5fd; 
+        }
+
+        .panel-left p {
+            font-size: 0.95rem;
+            font-weight: 300;
+            margin: 0 0 40px 0;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* =========================================
+           RIGHT PANEL (TecnunGo Form)
+           ========================================= */
+        .panel-right {
+            padding: 50px 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .panel-right h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--tecnun-blue-dark);
+            margin: 0 0 5px 0;
+        }
+
+        .panel-right .subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0 0 35px 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--tecnun-blue-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            background-color: #f9fafb;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--tecnun-blue-light);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(36, 59, 85, 0.1);
+        }
+
+        .error-message {
+            color: var(--error-color);
+            font-size: 0.8rem;
+            margin-top: 6px;
+            display: none;
+            font-weight: 500;
+        }
+
+        .btn-login-main {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--tecnun-green);
+            color: var(--text-light);
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            margin-top: 15px;
+            box-shadow: 0 4px 6px rgba(75, 139, 112, 0.2);
+        }
+
+        .btn-login-main:hover {
+            background-color: var(--tecnun-green-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Form Footer (Registration) */
+        .panel-right-footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .panel-right-footer a {
+            color: var(--tecnun-blue-dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .panel-right-footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+            .split-container {
+                grid-template-columns: 1fr;
+            }
+            .panel-left {
+                padding: 40px 20px;
+                min-height: 200px;
+            }
+            .panel-right {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="split-container">
+        
+        <div class="panel-left">
+            <h2>TecnunGo</h2>
+            <h3>University of Navarra</h3>
+            <p>Explore exchange destinations, consult academic requirements, and manage your preference list through our geolocated interactive map.</p>
+        </div>
+
+        <div class="panel-right">
+            <h1>User Login</h1>
+            <p class="subtitle">Access with your university credentials.</p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Username / Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@alumni.unav.es" required>
+                    <div id="email-error" class="error-message">
+                        Please use your @alumni.unav.es email address.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn-login-main">Login Now</button>
+            </form>
+
+            <div class="panel-right-footer">
+                Don't have an account? <a href="#signup">Sign Up</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const errorMsg = document.getElementById('email-error');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            const emailValue = emailInput.value.trim();
+            const requiredDomain = "@alumni.unav.es";
+
+            if (emailValue.endsWith(requiredDomain)) {
+                errorMsg.style.display = "none";
+                emailInput.style.borderColor = "#d1d5db";
+                
+                const btn = document.querySelector('.btn-login-main');
+                btn.innerHTML = "Verifying...";
+                
+                setTimeout(() => {
+                    alert("Validation successful! Entering TecnunGo...");
+                    btn.innerHTML = "Login Now";
+                }, 1000);
+
+            } else {
+                errorMsg.style.display = "block";
+                emailInput.style.borderColor = "var(--error-color)";
+            }
+        });
+
+        emailInput.addEventListener('input', function() {
+            errorMsg.style.display = "none";
+            emailInput.style.borderColor = "#d1d5db";
+        });
+    </script>
+
+</body>
+</html>
