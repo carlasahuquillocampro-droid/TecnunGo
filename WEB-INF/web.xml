@@ -10,5 +10,15 @@
         <servlet-name>UniList</servlet-name>
         <url-pattern>/UniList</url-pattern>
     </servlet-mapping>
+	
+	<servlet>
+        <servlet-name>ChatInsert</servlet-name>
+        <servlet-class>ChatInsert</servlet-class> 
+        </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ChatInsert</servlet-name>
+        <url-pattern>/ChatInsert</url-pattern>
+    </servlet-mapping>
 
 </web-app>
