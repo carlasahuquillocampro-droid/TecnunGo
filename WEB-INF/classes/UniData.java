@@ -69,7 +69,7 @@ public class UniData {
     }
 
 // ==========================================
-    // 2. MÉTODO CON FILTROS DINÁMICOS (TABLAS CORREGIDAS Y NOTA ORIGINAL)
+    // 2. MÉTODO CON FILTROS DINAMICOS (TABLAS CORREGIDAS Y NOTA ORIGINAL)
     // ==========================================
     public static Vector<UniData> getFilteredUniversityList(Connection connection, String gradeFilter, String countryFilter, String degreeFilter) {
         Vector<UniData> vec = new Vector<UniData>();
